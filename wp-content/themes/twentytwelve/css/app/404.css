@@ -1,0 +1,271 @@
+body{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑", verdana;
+	}
+ul{
+	margin:0;
+	padding:0;
+	}
+li{
+	list-style:none;
+	}
+
+/******************通用元素*****************/
+.section_title{
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#333;
+    letter-spacing:4px;
+    width:200px;
+    margin:20px auto;
+    text-align:center;
+    text-transform:uppercase;
+}
+.hnid_hidden{
+	display:none;
+	}
+	
+.hnid_btn_prev{
+	width:80px;
+	height:80px;
+	background:url(../../images/xavier/btn80_prev.png) no-repeat;
+	font-size:0;
+	text-indent:-9999px;
+	position:absolute;
+	top:50%;
+	left:10px;
+	opacity:0;
+	transition:all 0.4s ease-out;
+	}
+.hnid_btn_next{
+	width:80px;
+	height:80px;
+	background:url(../../images/xavier/btn80_next.png) no-repeat;
+	font-size:0;
+	text-indent:-9999px;
+	position:absolute;
+	top:50%;
+	right:10px;
+	opacity:0;
+	transition:all 0.4s ease-out;
+	}
+.hnid_column_50{
+	width:50%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	display:inline-block;
+	}
+
+/******************header*****************/
+
+.page_header{
+    height:148px;
+    position:relative;
+}
+.top_logo{
+    margin:0;
+    position:absolute;
+    top:0;
+    left:10px;
+}
+.top_logo>a{
+    font-size:0;
+    text-indent:-9999px;
+    display:block;
+    width:273px;
+    height:148px;
+    background:url(../../images/cidic/logo_cidic.jpg) no-repeat;
+
+}
+.top_nav{
+    position:absolute;
+    top:70px;
+    right:50px;
+    text-transform:uppercase;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:bold;
+}
+.top_nav ul li{
+    display:inline;
+    white-space:nowrap;
+    margin:0 10px;
+}
+.top_nav ul li a{
+    text-decoration:none;
+    font-size:14px;
+    display:inline-block;
+    padding:40px 0 20px 0;
+    color:#999;
+}
+.top_nav ul li a:hover{
+    color:#000;
+}
+
+
+
+/******************正文部分*****************/
+.site-content{
+	
+	}
+.entry-header{
+	padding:200px 0;
+	background:#48C6D5;
+	}
+.error404 .entry-header{
+	background:url("../../images/xavier/404.png") no-repeat bottom center #48C6D5;
+	}
+.entry-title{
+	text-align:center;
+	font-size:3em;
+	color:#fff;
+	}
+
+.entry-date{
+	text-align:center;
+	font-size:0.7em;
+	color:#666;
+	padding:1em 0;
+	background:#eee;
+	}
+.entry-content{	
+	width:70%;
+	max-width:970px;
+	margin:auto;
+	}
+.entry-content p{
+	font-size:1em;
+	line-height:1.5em;
+	}
+.entry-content img{
+	display:block;
+	margin:20px auto;
+	}
+.entry-content a{
+	color:#48C6D5;
+	}
+.entry-content a:hover{
+	color:#333;
+	}
+
+.entry-tags{
+	text-align:center;
+	}
+.entry-tags>li{
+	display:inline;
+	
+	}
+.entry-tags>li>a{
+	display:inline-block;
+	padding:0 20px 0 30px;
+	height:50px;
+	line-height:50px;
+	background: url("../../images/xavier/icon20_tag.png") no-repeat 10px center #D1A631;
+	margin:0 10px;
+	color:#fff;
+	text-decoration:none;
+	}
+.entry-tags>li>a:hover{
+	color:#333;
+	}
+.nav-single{
+	height:200px;
+	position:relative;
+	}
+.nav-single > .assistive-text{
+	display:none;
+	}
+.nav-single a{
+	text-decoration:none;
+	color:#fff;
+	}
+.nav-single a:hover{
+	color:#333;
+	}
+.nav-single > .nav-previous{
+	line-height:40px;
+	height:40px;
+	padding:0 10px;
+	position:absolute;
+	top:80px;
+	left:0;
+	background:#48c6d5;
+	font-size:14px;
+	}
+.nav-single > .nav-previous:after{
+	content:"";
+	width:12px;
+	height:40px;
+	background:url("../../images/xavier/blue_flag_tail_right.png") no-repeat;
+	position:absolute;
+	top:0;
+	right:-12px;
+	}
+.nav-single > .nav-next{
+	line-height:40px;
+	height:40px;
+	padding:0 10px;
+	position:absolute;
+	top:80px;
+	right:0;
+	background:#48c6d5;
+	font-size:14px;
+	}
+.nav-single > .nav-next:after{
+	content:"";
+	width:12px;
+	height:40px;
+	background:url("../../images/xavier/blue_flag_tail_left.png") no-repeat;
+	position:absolute;
+	top:0;
+	left:-12px;
+	}
+
+/******************contact*****************/
+.section_contact{
+    padding:50px 0 140px 0;
+    position:relative;
+    background:#111;
+}
+.contact_title{
+    color:#eee;
+    font-size:24px;
+}
+.section_contact .contact_list{
+    white-space:nowrap;
+    text-align:center;
+    color:#fff;
+    width:100%;
+    overflow:hidden;
+}
+.section_contact .contact_list li{
+    display:inline-block;
+    width:50%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:100px;
+    border-left:#ccc 1px dotted;
+    white-space:normal;
+}
+.section_contact .contact_list li:first-child{
+    border:none;
+}
+.section_contact .contact_list h3{
+    font-size:16px;
+}
+.section_contact .contact_list p{
+    color:#ccc;
+    font-size:12px;
+}
+.section_contact .copyright_info{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:12px;
+    text-align:center;
+    color:#999;
+    margin:30px auto 0;
+}

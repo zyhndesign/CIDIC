@@ -1,0 +1,326 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:"微软雅黑", verdana;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+}
+
+/******************通用元素*****************/
+.section_title{
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#333;
+    letter-spacing:4px;
+    width:200px;
+    margin:20px auto;
+    text-align:center;
+    text-transform:uppercase;
+}
+.section_heading{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+    font-style:italic;
+    text-transform:capitalize;
+    width:60%;
+    margin:50px auto;
+    text-align:center;
+}
+.post_list{
+    text-align:center;
+}
+.post_list li{
+    display:inline-block;
+    width:25%;
+
+}
+.post_thumb img{
+    width:100%;
+}
+.post_title{
+
+}
+
+.btn_more{
+    position:absolute;
+    right:0;
+    bottom:40px;
+    background:url(../../images/cidic/btn_more_bg_white.png) no-repeat;
+    display:inline-block;
+    width:300px;
+    height:60px;
+    line-height:60px;
+    font-size:14px;
+    font-weight:bold;
+    padding:0 60px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    text-decoration:none;
+    color:#000;
+}
+.btn_more:hover{
+    color:#999;
+}
+
+/******************header*****************/
+.page_header{
+    height:148px;
+    position:relative;
+}
+.top_logo{
+    margin:0;
+    position:absolute;
+    top:0;
+    left:10px;
+}
+.top_logo>a{
+    font-size:0;
+    text-indent:-9999px;
+    display:block;
+    width:273px;
+    height:148px;
+    background:url(../../images/cidic/logo_cidic.jpg) no-repeat;
+
+}
+.top_nav{
+    position:absolute;
+    top:70px;
+    right:50px;
+    text-transform:uppercase;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:bold;
+}
+.top_nav ul li{
+    display:inline;
+    white-space:nowrap;
+    margin:0 10px;
+}
+.top_nav ul li a{
+    text-decoration:none;
+    font-size:14px;
+    display:inline-block;
+    padding:40px 0 20px 0;
+    color:#999;
+}
+.top_nav ul li a:hover{
+    color:#000;
+}
+
+/******************news*****************/
+.section_news{
+    padding:50px 0 0 0;
+    position:relative;
+}
+.news_post .post_title{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+    font-style:italic;
+    text-transform:capitalize;
+    width:60%;
+    margin:50px auto;
+    text-align:center;
+    font-weight:normal;
+}
+.news_post .post_title a{
+    color:#000;
+    text-decoration:none;
+}
+.news_post .post_title a:hover{
+    color:#666;
+}
+.news_post .post_poster{
+    height:640px;
+    overflow:hidden;
+}
+.news_post .post_poster img{
+    min-width:100%;
+    min-height:640px;
+}
+.news_post .post_date{
+    padding:6px 10px;
+    font-size:14px;
+    background:#666;
+    color:#fff;
+    width:200px;
+    text-align:center;
+    margin:20px auto;
+	letter-spacing: 4px;
+}
+
+/******************programs*****************/
+.section_programs{
+    padding:50px 0 140px 0;
+    position:relative;
+    background:#999;
+}
+.section_programs .post_list li{
+    background:#333;
+    max-width:300px;
+    margin:0 10px;
+}
+.section_programs .post_title{
+    margin:0;
+}
+.section_programs .post_title a{
+    text-decoration:none;
+    color:#ccc;
+    padding:10px 20px;
+    display:block;
+    width:100%;
+    height:100px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+    font-size:16px;
+}
+.section_programs .post_date{
+    color:#999;
+    font-size:12px;
+	letter-spacing: 6px;
+}
+
+/******************partners*****************/
+.section_partners{
+    padding:50px 0 140px 0;
+    position:relative;
+}
+.section_partners .post_list{
+    margin:0 20px;
+}
+.section_partners .post_list li{
+    background:#333;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    margin:10px;
+    position:relative;
+}
+.section_partners .post_abstract{
+    width:200px;
+    height:200px;
+    position:absolute;
+    background:#333;
+    top:200px;
+    -webkit-transition:all 0.4s ease-out;
+    -moz-transition:all 0.4s ease-out;
+    -ms-transition:all 0.4s ease-out;
+    transition:all 0.4s ease-out;
+}
+.section_partners .post_list li:hover .post_abstract{
+    top:0;
+}
+.section_partners .post_title{
+    margin:0;
+}
+.section_partners .post_title a{
+    text-decoration:none;
+    color:#ccc;
+    padding:20px;
+    display:block;
+    width:100%;
+    height:150px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+    font-size:16px;
+}
+.section_partners .post_date{
+    color:#999;
+    font-size:14px;
+    display:none;
+}
+.section_partners .btn_more{
+    background:url(../../images/cidic/btn_more_bg_gray.png) no-repeat;
+    color:#ccc;
+}
+.section_partners .btn_more:hover{
+    color:#fff;
+}
+
+/******************about*****************/
+.section_about{
+    padding:50px 0 140px 0;
+    position:relative;
+    border-top:#999 1px dotted;
+}
+.section_about .intro_text{
+
+}
+.section_about .intro_text h3{
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:32px;
+    text-align:center;
+    text-transform:uppercase;
+}
+.section_about .intro_text p{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+    text-align:center;
+    width:70%;
+    margin:0 auto 100px;
+}
+.section_about .btn_more{
+    background:url(../../images/cidic/btn_more_bg_gray.png) no-repeat;
+    color:#ccc;
+}
+.section_about .btn_more:hover{
+    color:#fff;
+}
+
+/******************contact*****************/
+.section_contact{
+    padding:50px 0 140px 0;
+    position:relative;
+    background:#111;
+}
+.contact_title{
+    color:#eee;
+    font-size:24px;
+}
+.section_contact .contact_list{
+    white-space:nowrap;
+    text-align:center;
+    color:#fff;
+    width:100%;
+    overflow:hidden;
+}
+.section_contact .contact_list li{
+    display:inline-block;
+    width:50%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:100px;
+    border-left:#ccc 1px dotted;
+    white-space:normal;
+}
+.section_contact .contact_list li:first-child{
+    border:none;
+}
+.section_contact .contact_list h3{
+    font-size:16px;
+}
+.section_contact .contact_list p{
+    color:#ccc;
+    font-size:12px;
+}
+.section_contact .copyright_info{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:12px;
+    text-align:center;
+    color:#999;
+    margin:30px auto 0;
+}

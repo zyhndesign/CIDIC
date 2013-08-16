@@ -1,0 +1,257 @@
+body{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑", verdana;
+	}
+ul{
+	margin:0;
+	padding:0;
+	}
+li{
+	list-style:none;
+	}
+
+/******************通用元素*****************/
+.section_title{
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#333;
+    letter-spacing:4px;
+    width:200px;
+    margin:20px auto;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+/******************header*****************/
+
+.page_header{
+    height:148px;
+    position:relative;
+}
+.top_logo{
+    margin:0;
+    position:absolute;
+    top:0;
+    left:10px;
+}
+.top_logo>a{
+    font-size:0;
+    text-indent:-9999px;
+    display:block;
+    width:273px;
+    height:148px;
+    background:url(../../images/cidic/logo_cidic.jpg) no-repeat;
+
+}
+.top_nav{
+    position:absolute;
+    top:70px;
+    right:50px;
+    text-transform:uppercase;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:bold;
+}
+.top_nav ul li{
+    display:inline;
+    white-space:nowrap;
+    margin:0 10px;
+}
+.top_nav ul li a{
+    text-decoration:none;
+    font-size:14px;
+    display:inline-block;
+    padding:40px 0 20px 0;
+    color:#999;
+}
+.top_nav ul li a:hover{
+    color:#000;
+}
+
+/******************正文部分*****************/
+.site-content{
+	
+	}
+.archive-header{
+	padding:200px 0 40px 0;
+	background:#48C6D5;
+	}
+.archive-title{
+	text-align:center;
+	font-size:3em;
+	color:#fff;
+	position:relative;
+	}
+.archive-title:before{
+	content:"";
+	position:relative;
+	width:15px;
+	height:60px;
+	background:url("../../images/xavier/brace_left_white_m.png");
+	left:-20px;
+	top:10px;
+	display:inline-block;
+	}
+.archive-title:after{
+	content:"";
+	position:relative;
+	width:15px;
+	height:60px;
+	background:url("../../images/xavier/brace_right_white_m.png");
+	right:-20px;
+	top:10px;	
+	display:inline-block;
+	}
+.post-list{
+
+	}
+.post-list li{
+	position:relative;
+	border-bottom:#ccc 1px dotted;
+	padding:10px;
+	overflow:hidden;
+	}
+.post_thumb{
+	width:300px;
+	}
+.post_thumb>img{
+	width:100%;
+	}
+.post_abstract{
+	position:absolute;
+	left:350px;
+	top:10px;
+	}
+.post_abstract h3{
+	margin:0;
+	}
+.post_abstract h3 a{
+	text-decoration:none;
+	color:#48C6D5;
+	font-size:1.5em;
+	}
+.post_abstract p{
+	font-size:1em;
+	line-height:1.5em;
+	}	
+.post-list li .hnid_btn_more{
+	width:170px;
+	height:40px;
+	font-size:14px;
+	background:url(../../images/xavier/more_bg_blue.png) no-repeat;
+	position:absolute;
+	right:0;
+	bottom:10px;
+	line-height:40px;
+	padding:0 30px;
+	text-decoration:none;
+	color:#fff;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	}
+.post-list li .hnid_btn_more:hover{
+	color:#333;
+	}
+.post-list .post_abstract>.entry-tags{
+	
+	}
+.post-list .post_abstract>.entry-tags>li{
+	display:inline;
+	border:none;
+	padding:0;
+	}
+.post-list .post_abstract>.entry-tags>li>a {
+	display: inline-block;
+	padding: 0 20px 0 30px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../../images/xavier/icon20_tag.png") no-repeat 10px center #D1A631;
+	margin-right:10px;
+	color: #fff;
+	text-decoration: none;
+	font-size:14px;
+}
+.post-list .post_abstract>.entry-tags>li>a:hover{
+	color:#333;
+	}
+.post-list .post_abstract>.entry-date{
+	margin:10px 0;
+	font-size:14px;
+	color: #666;
+	font-style: italic;
+	background:url("../../images/xavier/icon_date_gray.png") no-repeat 0 center;
+	padding-left:25px;
+	}
+.hnid_pagination{
+	padding:50px 0;
+	}	
+ul.page-numbers{
+	text-align:center;
+	}
+ul.page-numbers li{
+	display:inline;
+	}
+ul.page-numbers li span, ul.page-numbers li a{
+	text-decoration:none;
+	padding:0 20px;
+	height:50px;
+	line-height:50px;
+	color:#fff;
+	background:#48c6d5;
+	display:inline-block;
+	}
+ul.page-numbers li a:hover{
+	background:#333;
+	}
+ul.page-numbers li .current{
+	background:#D1A631;
+	}
+
+/******************contact*****************/
+.section_contact{
+    padding:50px 0 140px 0;
+    position:relative;
+    background:#111;
+}
+.contact_title{
+    color:#eee;
+    font-size:24px;
+}
+.section_contact .contact_list{
+    white-space:nowrap;
+    text-align:center;
+    color:#fff;
+    width:100%;
+    overflow:hidden;
+}
+.section_contact .contact_list li{
+    display:inline-block;
+    width:50%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:100px;
+    border-left:#ccc 1px dotted;
+    white-space:normal;
+}
+.section_contact .contact_list li:first-child{
+    border:none;
+}
+.section_contact .contact_list h3{
+    font-size:16px;
+}
+.section_contact .contact_list p{
+    color:#ccc;
+    font-size:12px;
+}
+.section_contact .copyright_info{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:12px;
+    text-align:center;
+    color:#999;
+    margin:30px auto 0;
+}
