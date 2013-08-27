@@ -537,6 +537,12 @@ function zy_post_background_box($post){
 
     }
 
+    $edit_time=get_post_meta($post->ID,"_edit_lock",true);
+
+    if($edit_time){
+        echo "<input type='hidden' name='_edit_lock' value='$edit_time'>";
+    }
+
     ?>
 
     <div id='zy_background_container'>
@@ -731,6 +737,23 @@ function zy_delete_autodraft($post_id){
 }
 
 add_action("publish_post","zy_delete_autodraft");
+
+
+/*===========================================================文章锁定的控制==================================*/
+/*
+ * 文章处于锁定阶段的判断
+ * */
+function zy_check_lock($post_id){
+
+    //如果提交的edit_lock和数据库中保存的不一样，那么要阻止提交
+    $current_edit_lock=get_post_meta($post_id,"_edit_lock",true);
+    $edit_lock=$_POST["_edit_lock"];
+    if($current_edit_lock!=$edit_lock){
+        header("content-type:text/html; charset=utf-8");
+        die("其他人以先于你提交更改，请重新编辑后再提交，<a href='".site_url()."/wp-admin/edit.php'>返回</a>");
+    }
+}
+add_action("pre_post_update","zy_check_lock");
 
 /*========================================================ajax接口===============================*/
 function zy_action_uploadfile(){
