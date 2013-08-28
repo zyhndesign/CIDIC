@@ -40,24 +40,27 @@
 			<?php while ( have_posts() ) : the_post();
 				$post_id=get_the_ID();
 
-				if($thumb_id=get_post_meta($post_id,"_thumbnail_id",true)){
+                if(has_post_thumbnail($post_id)){
+                    $thumbnail_id=get_post_thumbnail_id($post_id);
+                    if(wp_get_attachment_metadata($thumbnail_id)){
 
-					$guid=get_post($thumb_id)->guid; $pathinfo=pathinfo($guid);
+                        //如果存在保存媒体文件信息的metadata，那么系统是可以获取出缩略图的
+                        $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
+                        $showDir=$showDir[0];
+                    }else{
 
-					//中文需要自己解析
-					$filename=substr($guid, strrpos($guid,"/")+1,strrpos($guid, '.')-strrpos($guid,"/")-1);
+                        $guid=get_post($thumbnail_id)->guid;
+                        $pathinfo=pathinfo($guid);
+                        $filename=substr($guid,strrpos($guid,"/")+1,strrpos($guid,'.')-strrpos($guid,"/")-1);
+                        $ext=$pathinfo["extension"];
+                        $dirname=$pathinfo["dirname"];
 
-					$ext=$pathinfo["extension"];
-
-					$dirname=$pathinfo["dirname"];
-
-					$showDir=$dirname."/".$filename."-500x500.".$ext;
-
-				}else{
-
-					$showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
-
-				}
+                        //不能获取出缩略图，但是又绑定了，那么是原来迁过来的数据，直接找缩略图文件
+                        $showDir=$dirname."/".$filename."-500x500.".$ext;
+                    }
+                }else{
+                    $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
+                }
 
 
 			?>

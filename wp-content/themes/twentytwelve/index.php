@@ -115,15 +115,26 @@ $vision_id=1230; //未来展望文章id
                     $post_id=get_the_ID();
                     $date=get_post($post_id)->post_date;
                     $date=explode(" ",$date);
-                    if($thumb_id=get_post_meta($post_id,"_thumbnail_id",true)){
-                        $guid=get_post($thumb_id)->guid;
-                        $pathinfo=pathinfo($guid);
-                        $filename=$pathinfo["filename"];
-                        $ext=$pathinfo["extension"];
-                        $dirname=$pathinfo["dirname"];
-                        $showDir=$dirname."/".$filename."-500x500.".$ext;
+                    if(has_post_thumbnail($post_id)){
+                        $thumbnail_id=get_post_thumbnail_id($post_id);
+                        if(wp_get_attachment_metadata($thumbnail_id)){
+
+                            //如果存在保存媒体文件信息的metadata，那么系统是可以获取出缩略图的
+                            $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
+                            $showDir=$showDir[0];
+                        }else{
+
+                            $guid=get_post($thumbnail_id)->guid;
+                            $pathinfo=pathinfo($guid);
+                            $filename=substr($guid,strrpos($guid,"/")+1,strrpos($guid,'.')-strrpos($guid,"/")-1);
+                            $ext=$pathinfo["extension"];
+                            $dirname=$pathinfo["dirname"];
+
+                            //不能获取出缩略图，但是又绑定了，那么是原来迁过来的数据，直接找缩略图文件
+                            $showDir=$dirname."/".$filename."-500x500.".$ext;
+                        }
                     }else{
-                        $showDir=get_template_directory_uri()."/images/cidic/thumb_default_500.png";
+                        $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
                     }
                     ?>
                     <li>
@@ -170,15 +181,26 @@ $vision_id=1230; //未来展望文章id
                         $post_id=get_the_ID();
                         $date=get_post($post_id)->post_date;
                         $date=explode(" ",$date);
-                        if($thumb_id=get_post_meta($post_id,"_thumbnail_id",true)){
-                            $guid=get_post($thumb_id)->guid;
-                            $pathinfo=pathinfo($guid);
-                            $filename=$pathinfo["filename"];
-                            $ext=$pathinfo["extension"];
-                            $dirname=$pathinfo["dirname"];
-                            $showDir=$dirname."/".$filename."-500x500.".$ext;
+                        if(has_post_thumbnail($post_id)){
+                            $thumbnail_id=get_post_thumbnail_id($post_id);
+                            if(wp_get_attachment_metadata($thumbnail_id)){
+
+                                //如果存在保存媒体文件信息的metadata，那么系统是可以获取出缩略图的
+                                $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
+                                $showDir=$showDir[0];
+                            }else{
+
+                                $guid=get_post($thumbnail_id)->guid;
+                                $pathinfo=pathinfo($guid);
+                                $filename=substr($guid,strrpos($guid,"/")+1,strrpos($guid,'.')-strrpos($guid,"/")-1);
+                                $ext=$pathinfo["extension"];
+                                $dirname=$pathinfo["dirname"];
+
+                                //不能获取出缩略图，但是又绑定了，那么是原来迁过来的数据，直接找缩略图文件
+                                $showDir=$dirname."/".$filename."-500x500.".$ext;
+                            }
                         }else{
-                            $showDir=get_template_directory_uri()."/images/cidic/thumb_default_500.png";
+                            $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
                         }
                         ?>
 
