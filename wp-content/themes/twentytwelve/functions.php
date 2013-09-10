@@ -748,7 +748,7 @@ function zy_check_lock($post_id){
     //如果提交的edit_lock和数据库中保存的不一样，那么要阻止提交
     $current_edit_lock=get_post_meta($post_id,"_edit_lock",true);
     $edit_lock=$_POST["_edit_lock"];
-    if($current_edit_lock!=$edit_lock){
+    if($current_edit_lock!=$edit_lock&&$edit_lock){
         header("content-type:text/html; charset=utf-8");
         die("其他人以先于你提交更改，请重新编辑后再提交，<a href='".site_url()."/wp-admin/edit.php'>返回</a>");
     }
