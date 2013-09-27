@@ -725,6 +725,11 @@ add_action('publish_post', 'zy_save_own_data');
 //add_action('pre_post_update','zy_data_save');
 
 
+//禁用自动保存草稿
+function zy_disable_autosave(){
+    wp_deregister_script("autosave");
+}
+add_action("wp_print_scripts","zy_disable_autosave");
 /*
  * 删除数据库多余的记录
  * */
