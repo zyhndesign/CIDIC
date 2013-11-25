@@ -18,10 +18,15 @@
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-
+    <meta name="description" content="CIDIC" />
+    <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/app/tag.css" />
 
-	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.10.2.min.js"></script><script src="<?php echo get_template_directory_uri(); ?>/js/app/HNID.UIManager.js"></script>    <script src="<?php echo get_template_directory_uri(); ?>/js/app/tag.js"></script>    <title><?php wp_title() ?></title>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.10.2.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/app/HNID.UIManager.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/app/tag.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
+    <title><?php wp_title() ?></title>
 
 </head>
 

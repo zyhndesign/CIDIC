@@ -26,12 +26,15 @@ $vision_id=1230; //未来展望文章id
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="CIDIC" />
+    <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
     <title><?php wp_title() ?></title>
     <link href="<?php echo get_template_directory_uri(); ?>/css/app/index.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.10.2.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/libs/greensock/TweenMax.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/libs/greensock/ScrollToPlugin.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/app/index.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
 </head>
 <body>
     <header class="page_header">
