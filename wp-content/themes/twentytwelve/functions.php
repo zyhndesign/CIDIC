@@ -709,15 +709,6 @@ function zy_save_own_data( $post_id ) {
             //提示错误
             die("保存背景数据出错，请联系开发人员");
         }
-
-
-        //删除临时存储文件夹
-        global $user_ID;
-        $target_dir=wp_upload_dir();
-        $target_dir=$target_dir["basedir"]."/tmp/".$user_ID;
-        if(is_dir($target_dir)){
-            zy_deldir($target_dir);
-        }
     }
 
 }
@@ -827,7 +818,22 @@ add_action('wp_ajax_uploadfile', 'zy_action_uploadfile');
 add_action('wp_ajax_nopriv_uploadfile','zy_action_uploadfile');
 
 /*===================================================数据清理=====================================*/
-
+/**
+ * 清除上传时产生的临时文件
+ */
+function zy_delete_tmp(){
+    global $user_ID;
+    $currentTimeS=time();
+    $target_dir=wp_upload_dir();
+    $target_dir=$target_dir["basedir"]."/tmp/".$user_ID;
+    if(is_dir($target_dir)){
+        $fileTimeS=filemtime($target_dir);
+        if($currentTimeS-$fileTimeS>12*60*60){
+            zy_deldir($target_dir);
+        }
+    }
+}
+add_action("admin_init","zy_delete_tmp");
 /*
  * 删除时的操作函数
  * */
