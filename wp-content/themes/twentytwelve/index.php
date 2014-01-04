@@ -50,15 +50,19 @@ $vision_id=1230; //未来展望文章id
         </nav>
     </header>
 
+    <div class="top_bg">
+        <img src="<?php echo get_template_directory_uri()."/images/default_bg/00.jpg" ?>" />
+    </div>
     <!-- **************** 新闻 ****************  -->
     <section class="section_news" id="section_news">
         <h2 class="section_title news_title">news</h2>
-        <article class="news_post">
+        <p class="section_heading">Push forward the cultural, economic, technological and design exchanges between China and Italy.</p>
+        <ul class="post_list">
 
             <?php
             // The Query
             $query = new WP_Query(array(
-                "cat_id"=>$news_id,"posts_per_page"=>1,"orderby"=>'date',"order"=>'DESC'
+                "cat_id"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
             ));
 
             // The Loop
@@ -68,25 +72,44 @@ $vision_id=1230; //未来展望文章id
                     $post_id=get_the_ID();
                     $date=get_post($post_id)->post_date;
                     $date=explode(" ",$date);
+                    if(has_post_thumbnail($post_id)){
+                        $thumbnail_id=get_post_thumbnail_id($post_id);
+                        if(wp_get_attachment_metadata($thumbnail_id)){
 
-                    if($background=get_post_meta($post_id,"zy_background",true)){
-                        $background=json_decode($background,true);
-                        $background_src=$background["filepath"];
+                            //如果存在保存媒体文件信息的metadata，那么系统是可以获取出缩略图的
+                            $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
+                            $showDir=$showDir[0];
+                        }else{
+
+                            $guid=get_post($thumbnail_id)->guid;
+                            $pathinfo=pathinfo($guid);
+                            $filename=substr($guid,strrpos($guid,"/")+1,strrpos($guid,'.')-strrpos($guid,"/")-1);
+                            $ext=$pathinfo["extension"];
+                            $dirname=$pathinfo["dirname"];
+
+                            //不能获取出缩略图，但是又绑定了，那么是原来迁过来的数据，直接找缩略图文件
+                            $showDir=$dirname."/".$filename."-500x500.".$ext;
+                        }
                     }else{
-                        $background_src=get_template_directory_uri()."/images/default_bg/00.jpg";
+                        $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
                     }
 
                     ?>
 
-                    <h3 class="post_title">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h3>
-                    <p class="post_date"><?php echo $date[0] ?></p>
-                    <div class="post_poster">
-                        <img src="<?php echo $background_src; ?>" />
-                    </div>
+                    <li>
+                        <div class="post_thumb">
+                            <img src="<?php echo $showDir; ?>" />
+                        </div>
+                        <div class="post_abstract">
+                            <h3 class="post_title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                            <p class="post_date"><?php echo $date[0]; ?></p>
+                        </div>
+                    </li>
 
-                    <?php
+
+                <?php
                 }
             }
 
@@ -95,7 +118,7 @@ $vision_id=1230; //未来展望文章id
 
             ?>
 
-        </article>
+        </ul>
         <a href="<?php echo get_category_link($news_id);?>" class="btn_more">NEWS ARCHIVE</a>
     </section>
 
@@ -162,7 +185,6 @@ $vision_id=1230; //未来展望文章id
             ?>
 
         </ul>
-        </article>
         <a href="<?php echo get_category_link($programs_id);?>" class="btn_more">ALL PROGRAMS</a>
     </section>
 
@@ -174,7 +196,7 @@ $vision_id=1230; //未来展望文章id
             <?php
                 // The Query
                 $query = new WP_Query(array(
-                    "cat"=>$parteners_id,"posts_per_page"=>12,"orderby"=>'date',"order"=>'DESC'
+                    "cat"=>$parteners_id,"posts_per_page"=>30,"orderby"=>'date',"order"=>'DESC'
                 ));
 
                 // The Loop
@@ -229,7 +251,6 @@ $vision_id=1230; //未来展望文章id
             ?>
 
         </ul>
-        </article>
         <a href="<?php echo get_category_link($parteners_id);?>" class="btn_more">ALL PARTNERS</a>
     </section>
 
@@ -237,10 +258,29 @@ $vision_id=1230; //未来展望文章id
     <section class="section_about" id="section_about">
         <h2 class="section_title about_title">about</h2>
         <article class="intro_text">
-            <h3>Who we are</h3>
-            <p>Push Forward The Cultural, Economic, Technological And Design Exchanges Between China And Italy.</p>
-            <h3>What we do</h3>
-            <p>Push Forward The Cultural, Economic, Technological And Design Exchanges Between China And Italy.</p>
+            <div>
+                <h1 class="bottom_logo"><a href="#">CIDIC</a></h1>
+                <h3>Who we are</h3>
+                <p>Push Forward The Cultural, Economic, Technological And Design Exchanges Between China And Italy.</p>
+
+            </div>
+            <div>
+                <h3>What we do</h3>
+                <ul class="post_list">
+                    <li>
+                        <h3 class="post_title"><a href="#">dddddssssssssssssssssddsadfadfadfafdafsasdfadfafaff</a></h3>
+                    </li>
+                    <li>
+                        <h3 class="post_title"><a href="#">dddddssssssssssssssssddsadfadfad</a></h3>
+                    </li>
+                    <li>
+                        <h3 class="post_title"><a href="#">ddddd</a></h3>
+                    </li>
+                    <li>
+                        <h3 class="post_title"><a href="#">ddddd</a></h3>
+                    </li>
+                </ul>
+            </div>
         </article>
         <a href="<?php echo post_permalink($vision_id); ?>" class="btn_more">OUR VISION</a>
     </section>
