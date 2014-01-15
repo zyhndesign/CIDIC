@@ -638,7 +638,7 @@ function zy_save_background($post_id){
                         return false;
                     }
                 }
-                $filepath=$this->dir["baseurl"]."/".$post_id."/".$filename;
+                $filepath=$dir["baseurl"]."/".$post_id."/".$filename;
                 //组装数据库数据
                 $json='{"filename":"'.$filename.'","filepath":"'.$filepath.'","type":"'.$filetype.'"}';
                 if(!update_post_meta($post_id,"zy_background",$json)){
@@ -646,7 +646,7 @@ function zy_save_background($post_id){
                 }
             }else{
                 //如果出现同名文件，要看一下tmp中是否存在文件，如果存在，则直接移动过去覆盖原来的文件
-                if(is_file($this->from_dir."/".$filename)){
+                if(is_file($from_dir."/".$filename)){
                     //移动文件
                     if(!rename($from_dir."/".$filename,$target_dir."/".$filename)){
                         return false;
@@ -679,7 +679,7 @@ function zy_save_background($post_id){
                     return false;
                 }
             }
-            $filepath=$this->dir["baseurl"]."/".$post_id."/".$filename;
+            $filepath=$dir["baseurl"]."/".$post_id."/".$filename;
             //组装数据库数据
             $json='{"filename":"'.$filename.'","filepath":"'.$filepath.'","type":"'.$filetype.'"}';
             if(!update_post_meta($post_id,"zy_background",$json)){
@@ -814,7 +814,7 @@ function zy_action_uploadfile(){
  * 处理文件上传的ajax函数
  * */
 add_action('wp_ajax_uploadfile', 'zy_action_uploadfile');
-//火狐里面这个地方不会带登陆标志过来，需要加下面这句
+//火狐里面这个地方不会带登陆标志过来，需要加下面这句或者前台上传插件使用html5引擎
 //add_action('wp_ajax_nopriv_uploadfile','zy_action_uploadfile');
 
 /*===================================================数据清理=====================================*/
