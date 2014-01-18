@@ -19,7 +19,7 @@ li{
     color:#333;
     letter-spacing:4px;
     width:200px;
-    margin:20px auto;
+    margin:25px auto;
     text-align:center;
     text-transform:uppercase;
 }
@@ -122,7 +122,7 @@ li{
 }
 /****************news*****************/
 .section_news{
-    padding:50px 0 140px 0;
+    padding:0px 0 140px 0;
     position:relative;
     background:#999;
 }
@@ -197,18 +197,18 @@ li{
 }
 .section_partners .post_list li{
     background:#333;
-    width:200px;
-    height:200px;
+    width:150px;
+    height:150px;
     overflow:hidden;
     margin:10px;
     position:relative;
 }
 .section_partners .post_abstract{
-    width:200px;
-    height:200px;
+    width:150px;
+    height:150px;
     position:absolute;
     background:#333;
-    top:200px;
+    top:150px;
     -webkit-transition:all 0.4s ease-out;
     -moz-transition:all 0.4s ease-out;
     -ms-transition:all 0.4s ease-out;
@@ -283,40 +283,41 @@ li{
 }
 .section_about .intro_text p{
     font-family:Georgia, "Times New Roman", Times, serif;
-    font-size:24px;
+    font-size:14px;
+    line-height: 2em;
     text-align:left;
     margin:0 0 100px 280px;
 }
 .section_about .post_list{
-    font-size: 0px;
+    margin-left:200px;
+    text-align: left;
 }
 .section_about .post_list li{
     display: inline-block;
-    width: 250px;
-    height: 100px;
-    background: #ccc;
-    margin: 10px 10px 0px 0px;
+    width: auto;
+    margin-right: 40px;
 }
-.section_about .post_list .post_title{
-    padding: 10px 0px 10px 35px;
-    background: url(../../images/cidic/title_arrow.png) no-repeat 3px center;
-    margin: 0px;
-    height: 100px;
-    overflow: hidden;
-    box-sizing: border-box;
+.section_about .post_list li a:before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top:5px;
+    background: #000000;
+    display: block;
 }
-.section_about .post_list .post_title a{
+.section_about .post_list li a{
     text-decoration: none;
     font-family:Georgia, "Times New Roman", Times, serif;
-    font-size:24px;
-    line-height: 30px;
-    color: #666;
+    font-size:14px;
+    line-height: 20px;
+    color: #000000;
     text-transform: none;
-    height: 80px;
-    display: table-cell;
-    word-break: break-all;
+    font-weight: normal;
     vertical-align: middle;
     text-align: left;
+    position: relative;
+    padding-left: 15px;
 }
 .section_about .btn_more{
     background:url(../../images/cidic/btn_more_bg_gray.png) no-repeat;
@@ -329,46 +330,29 @@ li{
 
 /******************contact*****************/
 .section_contact{
-    padding:50px 0 140px 0;
+    padding:50px 0 30px 0;
     position:relative;
-    background:#111;
+    background:url(../../images/cidic/contactBg.jpg) no-repeat;
+    background-size: 100% 100%;
+    color: #E9E8E5;
+    text-align:center;
 }
-.contact_title{
-    color:#eee;
+.section_contact .contact_title{
+    color: white;
     font-size:24px;
 }
-.section_contact .contact_list{
-    white-space:nowrap;
-    text-align:center;
-    color:#fff;
-    width:100%;
-    overflow:hidden;
+.section_contact h3{
+    color: white;
+    margin-top: 100px;
 }
-.section_contact .contact_list li{
-    display:inline-block;
-    width:50%;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
-    box-sizing:border-box;
-    padding:100px;
-    border-left:#ccc 1px dotted;
-    white-space:normal;
+.section_contact .telephone{
+    margin:40px 0px;
 }
-.section_contact .contact_list li:first-child{
-    border:none;
-}
-.section_contact .contact_list h3{
-    font-size:16px;
-}
-.section_contact .contact_list p{
-    color:#ccc;
-    font-size:12px;
+.section_contact .siteAddress{
+    margin:40px 0px;
 }
 .section_contact .copyright_info{
     font-family:Georgia, "Times New Roman", Times, serif;
     font-size:12px;
-    text-align:center;
-    color:#999;
-    margin:30px auto 0;
+    margin:100px auto 30px auto;
 }

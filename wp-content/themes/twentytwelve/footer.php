@@ -13,21 +13,12 @@
 <!-----------联系-------------->
 <footer class="section_contact" id="section_contact">
     <h2 class="section_title contact_title">contact</h2>
-    <ul class="contact_list">
-        <li>
-            <h3>CIDIC Changsha</h3>
-            <p>+86 731 88988607</p>
-            <p>233 Yuelu Ave. <br />Keji Building Floor 1<br />Changsha, P.R.China, 410013</p>
-            <p>cidic@hnid.org</p>
-        </li>
-        <li>
-            <h3>CIDIC Shanghai</h3>
-            <p>+86 021 65983561</p>
-            <p>Siping Road No.1239<br />Room 1801, Zonghe Bldg, Tongji University<br />Shanghai, P.R. China</p>
-            <p>secretariat@cidic.org</p>
-        </li>
-    </ul>
-    <p class="copyright_info">Copyright © 2007-2013 cidic.hnid.org</p>
+    <h3>CIDIC Changsha</h3>
+    <p class="telephone">+86 731 88988607</p>
+    <p>233 Yuelu Ave. <br />Keji Building Floor 1<br />Changsha, P.R.China, 410013</p>
+    <p class="siteAddress">cidic@hnid.org</p>
+
+    <p class="copyright_info">Copyright © 2007 cidic.hnid.org</p>
 </footer>
 </body>
 </html>

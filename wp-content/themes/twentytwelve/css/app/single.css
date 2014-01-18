@@ -227,46 +227,29 @@ li{
 	}
 /******************contact*****************/
 .section_contact{
-    padding:50px 0 140px 0;
+    padding:50px 0 30px 0;
     position:relative;
-    background:#111;
+    background:url(../../images/cidic/contactBg.jpg) no-repeat;
+    background-size: 100% 100%;
+    color: #E9E8E5;
+    text-align:center;
 }
-.contact_title{
-    color:#eee;
+.section_contact .contact_title{
+    color: white;
     font-size:24px;
 }
-.section_contact .contact_list{
-    white-space:nowrap;
-    text-align:center;
-    color:#fff;
-    width:100%;
-    overflow:hidden;
+.section_contact h3{
+    color: white;
+    margin-top: 100px;
 }
-.section_contact .contact_list li{
-    display:inline-block;
-    width:50%;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
-    box-sizing:border-box;
-    padding:100px;
-    border-left:#ccc 1px dotted;
-    white-space:normal;
+.section_contact .telephone{
+    margin:40px 0px;
 }
-.section_contact .contact_list li:first-child{
-    border:none;
-}
-.section_contact .contact_list h3{
-    font-size:16px;
-}
-.section_contact .contact_list p{
-    color:#ccc;
-    font-size:12px;
+.section_contact .siteAddress{
+    margin:40px 0px;
 }
 .section_contact .copyright_info{
     font-family:Georgia, "Times New Roman", Times, serif;
     font-size:12px;
-    text-align:center;
-    color:#999;
-    margin:30px auto 0;
+    margin:100px auto 30px auto;
 }

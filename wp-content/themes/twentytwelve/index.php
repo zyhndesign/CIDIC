@@ -28,7 +28,7 @@ $vision_id=1230; //未来展望文章id
     <meta charset="utf-8">
     <meta name="description" content="CIDIC" />
     <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
-    <title><?php wp_title() ?></title>
+    <title><?php  wp_title("|",true,"right"); ?></title>
     <link href="<?php echo get_template_directory_uri(); ?>/css/app/index.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.10.2.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/libs/greensock/TweenMax.min.js"></script>
@@ -38,7 +38,7 @@ $vision_id=1230; //未来展望文章id
 </head>
 <body>
     <header class="page_header">
-        <h1 class="top_logo"><a href="#">CIDIC</a></h1>
+        <h1 class="top_logo"><a href="<?php echo home_url(); ?>">CIDIC</a></h1>
         <nav class="top_nav" id="top_nav">
             <ul>
                 <li><a href="#section_news">news</a></li>
@@ -50,21 +50,30 @@ $vision_id=1230; //未来展望文章id
         </nav>
     </header>
 
-    <div class="top_bg">
-        <img src="<?php echo get_template_directory_uri()."/images/default_bg/00.jpg" ?>" />
-    </div>
+
     <!-- **************** 新闻 ****************  -->
     <section class="section_news" id="section_news">
+        <?php
+            // The Query
+            $query = new WP_Query(array(
+                "cat"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
+            ));
+
+            $background_src=get_template_directory_uri()."/images/default_bg/00.jpg";
+            if($background=get_post_meta($query->posts[0]->ID,"zy_background",true)){
+                  $background=json_decode($background,true);
+                  $background_src=$background["filepath"];
+            }
+        ?>
+        <div class="top_bg">
+            <img src="<?php echo $background_src ?>" />
+        </div>
         <h2 class="section_title news_title">news</h2>
         <p class="section_heading">Push forward the cultural, economic, technological and design exchanges between China and Italy.</p>
         <ul class="post_list">
 
-            <?php
-            // The Query
-            $query = new WP_Query(array(
-                "cat_id"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
-            ));
 
+            <?php
             // The Loop
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
@@ -259,26 +268,25 @@ $vision_id=1230; //未来展望文章id
         <h2 class="section_title about_title">about</h2>
         <article class="intro_text">
             <div>
-                <h1 class="bottom_logo"><a href="#">CIDIC</a></h1>
+                <h1 class="bottom_logo"><a href="<?php echo home_url(); ?>">CIDIC</a></h1>
                 <h3>Who we are</h3>
-                <p>Push Forward The Cultural, Economic, Technological And Design Exchanges Between China And Italy.</p>
+                <p>
+                    Background<br>
+                    Based on the guideline of Mr. Zhou Qiang, the previous Hunan Province Secretary of the CCP Committee, according to the ‘Three Year Action Plan of Strengthening Sino-Italian Economic Cooperation’ signed by Premier Wen Jiabao and Italian Premier, consented by the Ministry of Science and Technology, China-Italy Design and Innovation Centre (Hunan) was established to enhance design cooperation, serve local economic innovation and development between the two countries.
+                    <br>Aim<br>
+                    We aim to internationalise our industrial design development, integrating resources and creating international brands by leading the design innovation integration of upstream and downstream industries, gathering national and international design resources and talents to Hunan to further enhance the industrial design innovation level in Hunan and China.
+
+                </p>
 
             </div>
             <div>
-                <h3>What we do</h3>
+                <h3>Our members</h3>
                 <ul class="post_list">
-                    <li>
-                        <h3 class="post_title"><a href="#">dddddssssssssssssssssddsadfadfadfafdafsasdfadfafaff</a></h3>
-                    </li>
-                    <li>
-                        <h3 class="post_title"><a href="#">dddddssssssssssssssssddsadfadfad</a></h3>
-                    </li>
-                    <li>
-                        <h3 class="post_title"><a href="#">ddddd</a></h3>
-                    </li>
-                    <li>
-                        <h3 class="post_title"><a href="#">ddddd</a></h3>
-                    </li>
+                    <?php
+                        wp_list_bookmarks(array(
+                            'title_li'=>null,
+                        ));
+                    ?>
                 </ul>
             </div>
         </article>

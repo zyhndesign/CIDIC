@@ -22,7 +22,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/app/HNID.UIManager.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/app/search.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
-    <title><?php wp_title() ?></title>
+    <title><?php  wp_title("|",true,"right"); ?></title>
 
 </head>
 

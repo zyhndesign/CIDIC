@@ -22,7 +22,7 @@ $notification_id=1501;//通知公告分类id
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/app/category.css"/>
 
     <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
-    <title><?php wp_title() ?></title>
+    <title><?php  wp_title("|",true,"right"); ?></title>
 </head>
 
 <!--头部-->

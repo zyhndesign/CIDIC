@@ -834,10 +834,12 @@ function zy_delete_tmp(){
     }
 }
 add_action("admin_init","zy_delete_tmp");
+
 /*
  * 删除时的操作函数
  * */
 function zy_delete_post($post_id){
+
     //设置页面编码
     header("content-type:text/html; charset=utf-8");
 
