@@ -6,12 +6,6 @@
  * @package WordPress * @subpackage Twenty_Twelve * @since Twenty Twelve 1.0
  * */
 
-$download_id=1502;//下载专区分类id
-
-$recruitment_id=1500;//实习招聘分类id
-
-$notification_id=1501;//通知公告分类id
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,10 +13,10 @@ $notification_id=1501;//通知公告分类id
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="description" content="CIDIC" />
     <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/app/category.css"/>
-
-    <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
     <title><?php  wp_title("|",true,"right"); ?></title>
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/frontend/src/category.css"/>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/src/googleAnalytics.js"></script>
+
 </head>
 
 <!--头部-->
@@ -40,14 +34,8 @@ $notification_id=1501;//通知公告分类id
             <?php while (have_posts()) : the_post();?>
 
                 <li>
-                    <?php if(in_category(array($download_id,$recruitment_id,$notification_id))){?>
+                    <?php
 
-                        <!--下载专区文章没有缩略图-->
-                        <div class="nothumb-abstract">
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        </div>
-
-                    <?php }else{
                         //获取缩略图
                         $post_id = get_the_ID();
                         if(has_post_thumbnail($post_id)){
@@ -69,7 +57,7 @@ $notification_id=1501;//通知公告分类id
                                 $showDir=$dirname."/".$filename."-500x500.".$ext;
                             }
                         }else{
-                            $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
+                            $showDir=get_template_directory_uri()."/images/frontend/app/thumb_default_500.png";
                         }
                     ?>
 
@@ -82,12 +70,9 @@ $notification_id=1501;//通知公告分类id
 
                             <p class="entry-date"><?php echo get_the_date(); ?></p>
 
-                            <p><?php the_excerpt(); ?></p>
+                            <p><?php echo get_the_excerpt(); ?></p>
 
-                            <?php /*?><?php echo get_the_tag_list('<ul class="entry-tags"><li>', '</li><li>', '</li></ul>');?><?php */?>
                         </div>
-
-                    <?php  } ?>
 
                     <a href="<?php the_permalink(); ?>" class="hnid_btn_more">more...</a>
                 </li>

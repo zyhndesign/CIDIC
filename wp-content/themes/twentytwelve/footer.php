@@ -18,7 +18,7 @@
     <p>233 Yuelu Ave. <br />Keji Building Floor 1<br />Changsha, P.R.China, 410013</p>
     <p class="siteAddress">cidic@hnid.org</p>
 
-    <p class="copyright_info">Copyright © 2007 cidic.hnid.org</p>
+    <p class="copyright_info">Copyright © 2007 hnid.org/CIDIC</p>
 </footer>
 </body>
 </html>

@@ -29,12 +29,12 @@ $vision_id=1230; //未来展望文章id
     <meta name="description" content="CIDIC" />
     <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
     <title><?php  wp_title("|",true,"right"); ?></title>
-    <link href="<?php echo get_template_directory_uri(); ?>/css/app/index.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.10.2.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/libs/greensock/TweenMax.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/libs/greensock/ScrollToPlugin.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/app/index.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/app/googleAnalytics.js"></script>
+    <link href="<?php echo get_template_directory_uri(); ?>/css/frontend/src/index.css" rel="stylesheet" type="text/css">
+    <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/lib/jquery-1.10.2.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/lib/TweenMax.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/lib/ScrollToPlugin.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/src/index.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/src/googleAnalytics.js"></script>
 </head>
 <body>
     <header class="page_header">
@@ -59,7 +59,7 @@ $vision_id=1230; //未来展望文章id
                 "cat"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
             ));
 
-            $background_src=get_template_directory_uri()."/images/default_bg/00.jpg";
+            $background_src=get_template_directory_uri()."/images/frontend/app/00.jpg";
             if($background=get_post_meta($query->posts[0]->ID,"zy_background",true)){
                   $background=json_decode($background,true);
                   $background_src=$background["filepath"];
@@ -100,7 +100,7 @@ $vision_id=1230; //未来展望文章id
                             $showDir=$dirname."/".$filename."-500x500.".$ext;
                         }
                     }else{
-                        $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
+                        $showDir=get_template_directory_uri()."/images/frontend/app/thumb_default_500.png";
                     }
 
                     ?>
@@ -169,7 +169,7 @@ $vision_id=1230; //未来展望文章id
                             $showDir=$dirname."/".$filename."-500x500.".$ext;
                         }
                     }else{
-                        $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
+                        $showDir=get_template_directory_uri()."/images/frontend/app/thumb_default_500.png";
                     }
                     ?>
                     <li>
@@ -234,7 +234,7 @@ $vision_id=1230; //未来展望文章id
                                 $showDir=$dirname."/".$filename."-500x500.".$ext;
                             }
                         }else{
-                            $showDir=get_template_directory_uri()."/images/app/thumb_default_500.png";
+                            $showDir=get_template_directory_uri()."/images/frontend/app/thumb_default_500.png";
                         }
                         ?>
 
