@@ -9,7 +9,7 @@
 	top:0;
 	width:30%;
 	}
-.entry-title{
+.entry-header .entry-title{
 	font-size:2em;
 	color:#666;
 	font-family:Georgia, "Times New Roman", Times, serif;
@@ -17,7 +17,7 @@
 	font-style:italic;
 	font-weight:normal;
 	}
-.entry-date{
+.entry-header .entry-date{
 	font-size:12px;
 	letter-spacing:4px;
 	color:#666;
