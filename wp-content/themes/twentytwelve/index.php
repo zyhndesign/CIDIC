@@ -29,6 +29,7 @@ $vision_id=1230; //未来展望文章id
     <meta name="description" content="CIDIC" />
     <meta name="keywords" content="CIDIC,DESIGN,ITALY" />
     <title><?php  wp_title("|",true,"right"); ?></title>
+    <link href="<?php echo get_template_directory_uri(); ?>/css/frontend/src/common.css" rel="stylesheet" type="text/css">
     <link href="<?php echo get_template_directory_uri(); ?>/css/frontend/src/index.css" rel="stylesheet" type="text/css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/lib/jquery-1.10.2.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/frontend/lib/TweenMax.min.js"></script>
@@ -268,26 +269,26 @@ $vision_id=1230; //未来展望文章id
         <h2 class="section_title about_title">about</h2>
         <article class="intro_text">
             <div>
-                <h1 class="bottom_logo"><a href="<?php echo home_url(); ?>">CIDIC</a></h1>
+                <h3>Our Organization</h3>
+                <ul class="post_list">
+                    <?php
+                    wp_list_bookmarks(array(
+                        'title_li'=>null
+                    ));
+                    ?>
+                </ul>
+            </div>
+            <div>
+                <!--<h1 class="bottom_logo"><a href="<?php /*echo home_url(); */?>">CIDIC</a></h1>-->
                 <h3>Who we are</h3>
                 <p>
-                    Background<br>
+
                     Based on the guideline of Mr. Zhou Qiang, the previous Hunan Province Secretary of the CCP Committee, according to the ‘Three Year Action Plan of Strengthening Sino-Italian Economic Cooperation’ signed by Premier Wen Jiabao and Italian Premier, consented by the Ministry of Science and Technology, China-Italy Design and Innovation Centre (Hunan) was established to enhance design cooperation, serve local economic innovation and development between the two countries.
-                    <br>Aim<br>
+                </p><p>
                     We aim to internationalise our industrial design development, integrating resources and creating international brands by leading the design innovation integration of upstream and downstream industries, gathering national and international design resources and talents to Hunan to further enhance the industrial design innovation level in Hunan and China.
 
                 </p>
 
-            </div>
-            <div>
-                <h3>Our members</h3>
-                <ul class="post_list">
-                    <?php
-                        wp_list_bookmarks(array(
-                            'title_li'=>null,
-                        ));
-                    ?>
-                </ul>
             </div>
         </article>
         <a href="<?php echo post_permalink($vision_id); ?>" class="btn_more">OUR VISION</a>

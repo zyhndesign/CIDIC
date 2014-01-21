@@ -1,75 +1,3 @@
-body{
-	margin:0;
-	padding:0;
-	font-family:"微软雅黑", verdana;
-	}
-ul{
-	margin:0;
-	padding:0;
-	}
-li{
-	list-style:none;
-	}
-
-/******************通用元素*****************/
-.section_title{
-    font-family:Verdana, Geneva, sans-serif;
-    font-size:12px;
-    font-weight:bold;
-    color:#333;
-    letter-spacing:4px;
-    width:200px;
-    margin:20px auto;
-    text-align:center;
-    text-transform:uppercase;
-}
-
-/******************header*****************/
-
-.page_header{
-    height:148px;
-    position:relative;
-}
-.top_logo{
-    margin:0;
-    position:absolute;
-    top:0;
-    left:10px;
-}
-.top_logo>a{
-    font-size:0;
-    text-indent:-9999px;
-    display:block;
-    width:273px;
-    height:148px;
-    background:url(../../../images/frontend/app/logo_cidic.jpg) no-repeat;
-
-}
-.top_nav{
-    position:absolute;
-    top:70px;
-    right:50px;
-    text-transform:uppercase;
-    font-family:Verdana, Geneva, sans-serif;
-    font-weight:bold;
-}
-.top_nav ul li{
-    display:inline;
-    white-space:nowrap;
-    margin:0 10px;
-}
-.top_nav ul li a{
-    text-decoration:none;
-    font-size:14px;
-    display:inline-block;
-    padding:40px 0 20px 0;
-    color:#999;
-}
-.top_nav ul li a:hover{
-    color:#000;
-}
-
-
 /******************正文部分*****************/
 .site-content{
 	position:relative;
@@ -156,14 +84,14 @@ li{
 	}
 .hnid_pagination{
 	padding:50px 0;
-	}	
-ul.page-numbers{
+	}
+.hnid_pagination ul.page-numbers{
 	text-align:center;
 	}
-ul.page-numbers li{
+.hnid_pagination ul.page-numbers li{
 	display:inline;
 	}
-ul.page-numbers li span, ul.page-numbers li a{
+.hnid_pagination ul.page-numbers li span, ul.page-numbers li a{
 	text-decoration:none;
 	padding:0 20px;
 	height:50px;
@@ -172,38 +100,10 @@ ul.page-numbers li span, ul.page-numbers li a{
 	background:#666;
 	display:inline-block;
 	}
-ul.page-numbers li a:hover{
+.hnid_pagination ul.page-numbers li a:hover{
 	background:#333;
 	}
-ul.page-numbers li .current{
+.hnid_pagination ul.page-numbers li .current{
 	background:#000;
 	}
 
-/******************contact*****************/
-.section_contact{
-    padding:50px 0 30px 0;
-    position:relative;
-    background:url(../../../images/frontend/app/contactBg.jpg) no-repeat;
-    background-size: 100% 100%;
-    color: #E9E8E5;
-    text-align:center;
-}
-.section_contact .contact_title{
-    color: white;
-    font-size:24px;
-}
-.section_contact h3{
-    color: white;
-    margin-top: 100px;
-}
-.section_contact .telephone{
-    margin:40px 0px;
-}
-.section_contact .siteAddress{
-    margin:40px 0px;
-}
-.section_contact .copyright_info{
-    font-family:Georgia, "Times New Roman", Times, serif;
-    font-size:12px;
-    margin:100px auto 30px auto;
-}
