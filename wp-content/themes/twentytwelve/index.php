@@ -149,7 +149,13 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
                 <li>
                     <a href="<?php echo get_category_link($category->cat_ID); ?>">
                         <div class="post_thumb">
-                            <img src="<?php echo $category->description; ?>" />
+                            <?php
+                                $post=get_posts(array('posts_per_page' => 1, 'category' => $category->cat_ID));
+                                $thumbnail_id=get_post_thumbnail_id($post[0]->ID);
+                                $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
+                                $showDir=$showDir[0];
+                            ?>
+                            <img src="<?php echo $showDir ?>">
                         </div>
                         <div class="post_abstract">
                             <h3 class="post_title">
