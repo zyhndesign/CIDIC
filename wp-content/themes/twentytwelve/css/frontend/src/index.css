@@ -46,22 +46,18 @@
     color:#999;
 }
 
-/****************news*****************/
-.section_news{
-    padding:0px 0 140px 0;
+/*****************news、programs**********/
+.section_common{
     position:relative;
     background:#999;
 }
-.section_news .post_list li{
+.section_common .post_list li{
     background:#333;
     max-width:300px;
     margin:0 10px;
 }
-.section_news .post_title{
+.section_common .post_title{
     margin:0;
-}
-.section_news .post_title a{
-    text-decoration:none;
     color:#ccc;
     padding:10px 20px;
     display:block;
@@ -74,43 +70,25 @@
     overflow:hidden;
     font-size:16px;
 }
-.section_news .post_date{
+.section_common .post_date{
     color:#999;
     font-size:12px;
     letter-spacing: 6px;
 }
+.section_common .post_date{
+    color:#999;
+    font-size:12px;
+    letter-spacing: 6px;
+}
+/****************news*****************/
+.section_news{
+    padding:0px 0 140px 0;
+}
 /******************programs*****************/
 .section_programs{
     padding:50px 0 140px 0;
-    position:relative;
-    background:#999;
-}
-.section_programs .post_list li{
-    background:#333;
-    max-width:300px;
-    margin:0 10px;
-}
-.section_programs .post_title{
-    margin:0;
-}
-.section_programs .post_title a{
-    text-decoration:none;
-    color:#ccc;
-    padding:10px 20px;
-    display:block;
-    width:100%;
-    height:100px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
-    box-sizing:border-box;
-    overflow:hidden;
-    font-size:16px;
 }
 .section_programs .post_date{
-    color:#999;
-    font-size:12px;
-	letter-spacing: 6px;
     display: none;
 }
 .section_programs .btn_more{

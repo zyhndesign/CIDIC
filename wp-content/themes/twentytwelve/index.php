@@ -21,6 +21,8 @@ $parteners_id=135; //合作伙伴分类id
 
 $vision_id=1230; //未来展望文章id
 
+$programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>false,'orderby'=>'id'));
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +55,7 @@ $vision_id=1230; //未来展望文章id
 
 
     <!-- **************** 新闻 ****************  -->
-    <section class="section_news" id="section_news">
+    <section class="section_news section_common" id="section_news">
         <?php
             // The Query
             $query = new WP_Query(array(
@@ -107,15 +109,17 @@ $vision_id=1230; //未来展望文章id
                     ?>
 
                     <li>
-                        <div class="post_thumb">
-                            <img src="<?php echo $showDir; ?>" />
-                        </div>
-                        <div class="post_abstract">
-                            <h3 class="post_title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h3>
-                            <p class="post_date"><?php echo $date[0]; ?></p>
-                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="post_thumb">
+                                <img src="<?php echo $showDir; ?>" />
+                            </div>
+                            <div class="post_abstract">
+                                <h3 class="post_title">
+                                    <?php the_title(); ?>
+                                </h3>
+                                <p class="post_date"><?php echo $date[0]; ?></p>
+                            </div>
+                        </a>
                     </li>
 
 
@@ -133,67 +137,31 @@ $vision_id=1230; //未来展望文章id
     </section>
 
     <!-----------项目-------------->
-    <section class="section_programs" id="section_programs">
+    <section class="section_programs section_common" id="section_programs">
         <h2 class="section_title programs_title">programs</h2>
         <p class="section_heading">Push forward the cultural, economic, technological and design exchanges between China and Italy.</p>
         <ul class="post_list">
 
             <?php
-            // The Query
-            $query = new WP_Query(array(
-                "cat"=>$programs_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
-            ));
+            foreach ($programCategories as $key=>$category) {
 
-            // The Loop
-            if ( $query->have_posts() ) {
-                while ( $query->have_posts() ) {
-                    $query->the_post();
-                    $post_id=get_the_ID();
-                    $date=get_post($post_id)->post_date;
-                    $date=explode(" ",$date);
-                    if(has_post_thumbnail($post_id)){
-                        $thumbnail_id=get_post_thumbnail_id($post_id);
-                        if(wp_get_attachment_metadata($thumbnail_id)){
-
-                            //如果存在保存媒体文件信息的metadata，那么系统是可以获取出缩略图的
-                            $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
-                            $showDir=$showDir[0];
-                        }else{
-
-                            $guid=get_post($thumbnail_id)->guid;
-                            $pathinfo=pathinfo($guid);
-                            $filename=substr($guid,strrpos($guid,"/")+1,strrpos($guid,'.')-strrpos($guid,"/")-1);
-                            $ext=$pathinfo["extension"];
-                            $dirname=$pathinfo["dirname"];
-
-                            //不能获取出缩略图，但是又绑定了，那么是原来迁过来的数据，直接找缩略图文件
-                            $showDir=$dirname."/".$filename."-500x500.".$ext;
-                        }
-                    }else{
-                        $showDir=get_template_directory_uri()."/images/frontend/app/thumb_default_500.png";
-                    }
-                    ?>
-                    <li>
+            ?>
+                <li>
+                    <a href="<?php echo get_category_link($category->cat_ID); ?>">
                         <div class="post_thumb">
-                            <img src="<?php echo $showDir; ?>" />
+                            <img src="<?php echo $category->description; ?>" />
                         </div>
                         <div class="post_abstract">
                             <h3 class="post_title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <?php echo $category->name; ?>
                             </h3>
-                            <p class="post_date"><?php echo $date[0]; ?></p>
+                            <p class="post_date"><?php echo ""; ?></p>
                         </div>
-                    </li>
-
-                    <?php
-                }
+                    </a>
+                </li>
+            <?php
             }
-
-            /* Restore original Post Data */
-            wp_reset_postdata();
-
             ?>
-
         </ul>
         <a href="<?php echo get_category_link($programs_id);?>" class="btn_more">ALL PROGRAMS</a>
     </section>

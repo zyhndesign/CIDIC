@@ -10,6 +10,9 @@ ul{
 li{
     list-style:none;
 }
+a{
+    text-decoration: none;
+}
 /******************通用元素*****************/
 .section_title{
     font-family:Verdana, Geneva, sans-serif;
