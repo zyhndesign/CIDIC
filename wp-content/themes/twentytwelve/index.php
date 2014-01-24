@@ -155,7 +155,7 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
                                 $showDir= wp_get_attachment_image_src($thumbnail_id,"post-thumbnail");
                                 $showDir=$showDir[0];
                             ?>
-                            <img src="<?php echo $showDir ?>">
+                            <img src="<?php echo $showDir; ?>">
                         </div>
                         <div class="post_abstract">
                             <h3 class="post_title">
