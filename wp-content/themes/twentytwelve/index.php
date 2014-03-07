@@ -21,7 +21,9 @@ $parteners_id=135; //合作伙伴分类id
 
 $vision_id=1230; //未来展望文章id
 
-$programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>false,'orderby'=>'id'));
+$head_line_id=1493; //头条文章id
+
+$program_categories=get_categories(array("parent"=>$programs_id,"hide_empty"=>false,'orderby'=>'id'));
 
 ?>
 <!DOCTYPE html>
@@ -42,6 +44,7 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
 <body>
     <header class="page_header">
         <h1 class="top_logo"><a href="<?php echo home_url(); ?>">CIDIC</a></h1>
+        <a class="hnid" href="http://www.hnid.org" target="_blank">hnid.org</a>
         <nav class="top_nav" id="top_nav">
             <ul>
                 <li><a href="#section_news">news</a></li>
@@ -59,11 +62,13 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
         <?php
             // The Query
             $query = new WP_Query(array(
-                "cat"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
+                "tag_id"=>$head_line_id,"posts_per_page"=>1,"orderby"=>'date',"order"=>'DESC'
             ));
 
             $background_src=get_template_directory_uri()."/images/frontend/app/00.jpg";
+            //print_r($query->posts);
             if($background=get_post_meta($query->posts[0]->ID,"zy_background",true)){
+
                   $background=json_decode($background,true);
                   $background_src=$background["filepath"];
             }
@@ -77,6 +82,9 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
 
 
             <?php
+            $query = new WP_Query(array(
+                "cat"=>$news_id,"posts_per_page"=>3,"orderby"=>'date',"order"=>'DESC'
+            ));
             // The Loop
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
@@ -143,7 +151,7 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
         <ul class="post_list">
 
             <?php
-            foreach ($programCategories as $key=>$category) {
+            foreach ($program_categories as $key=>$category) {
 
             ?>
                 <li>
@@ -246,8 +254,13 @@ $programCategories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fal
                 <h3>Our Organization</h3>
                 <ul class="post_list">
                     <?php
-                    wp_list_bookmarks(array(
+                    /*wp_list_bookmarks(array(
                         'title_li'=>null
+                    ));*/
+                    mylinkorder_list_bookmarks(array(
+                        'orderby'=>"order",
+                        'title_li'=>null,
+                        'categorize'=> 0
                     ));
                     ?>
                 </ul>

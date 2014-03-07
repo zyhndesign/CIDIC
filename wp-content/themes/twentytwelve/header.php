@@ -12,6 +12,7 @@
 <body>
     <header class="page_header">
         <h1 class="top_logo"><a href="<?php echo home_url(); ?>">CIDIC</a></h1>
+        <a class="hnid" href="http://www.hnid.org" target="_blank">hnid.org</a>
         <nav class="top_nav">
             <ul>
                 <li><a href="<?php echo home_url(); ?>">home</a></li>
