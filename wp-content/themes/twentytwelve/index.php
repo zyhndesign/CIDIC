@@ -185,7 +185,7 @@ $program_categories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fa
                     </div>
                     <div class="post_abstract">
                         <h3 class="post_title">
-                            Rong Exhibition
+                            Gaeml Brocade
                         </h3>
                         <p class="post_date"><?php echo ""; ?></p>
                     </div>

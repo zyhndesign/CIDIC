@@ -43,7 +43,7 @@
 <?php get_header(); ?>
 <section id="primary" class="site-content">
     <h2 class="title">Gaeml Brocade Research&Innovation Project</h2>
-    <video src="http://s40yes.bdcdn.duapp.com/tongdao.mp4" autoplay="autoplay" controls="controls"></video>
+    <video src="http://s40yes.bdcdn.duapp.com/dongjin1.mp4" autoplay="autoplay" controls="controls"></video>
     <div class="moreInfo">For more information, please follow our official Weibo
         <br><a href="http://weibo.com/newchannel2011" target="_blank">@新通道社会创新</a>
     </div>
