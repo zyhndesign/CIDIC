@@ -21,7 +21,8 @@ a{
     color:#333;
     letter-spacing:4px;
     width:200px;
-    margin:20px auto;
+    margin:0px auto 20px auto;
+    padding-top:20px;
     text-align:center;
     text-transform:uppercase;
 }
@@ -88,9 +89,8 @@ a{
 
 /******************contact*****************/
 .section_contact{
-    padding:200px 0 0 0;
+    padding:10px 0 10px 0;
     box-sizing: border-box;
-    height: 570px;
     position:relative;
     background:url(../../../images/frontend/app/contactBg.jpg) no-repeat;
     background-size: 100% 100%;
@@ -109,9 +109,10 @@ a{
 }
 .section_contact p{
     font-size: 14px;
+    margin: 5px 0px;
 }
 .section_contact .copyright_info{
     font-family:Georgia, "Times New Roman", Times, serif;
     font-size:12px;
-    margin:30px auto 0px auto;
+    margin:10px auto 0px auto;
 }

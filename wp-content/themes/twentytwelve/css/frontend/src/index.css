@@ -14,7 +14,7 @@
 }
 .post_list li{
     display:inline-block;
-    width:25%;
+    width:22%;
 }
 .post_thumb img{
     width:100%;
@@ -54,7 +54,7 @@
 .section_common .post_list li{
     background:#333;
     max-width:300px;
-    margin:0 10px;
+    margin:0 1%;
 }
 .section_common .post_title{
     margin:0;

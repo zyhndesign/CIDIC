@@ -56,26 +56,27 @@ $program_categories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fa
         </nav>
     </header>
 
+    <?php
+    // The Query
+    $query = new WP_Query(array(
+        "tag_id"=>$head_line_id,"posts_per_page"=>1,"orderby"=>'date',"order"=>'DESC'
+    ));
+
+    $background_src=get_template_directory_uri()."/images/frontend/app/00.jpg";
+    //print_r($query->posts);
+    if($background=get_post_meta($query->posts[0]->ID,"zy_background",true)){
+
+        $background=json_decode($background,true);
+        $background_src=$background["filepath"];
+    }
+    ?>
+    <div class="top_bg">
+        <img src="<?php echo $background_src ?>" />
+    </div>
 
     <!-- **************** 新闻 ****************  -->
     <section class="section_news section_common" id="section_news">
-        <?php
-            // The Query
-            $query = new WP_Query(array(
-                "tag_id"=>$head_line_id,"posts_per_page"=>1,"orderby"=>'date',"order"=>'DESC'
-            ));
 
-            $background_src=get_template_directory_uri()."/images/frontend/app/00.jpg";
-            //print_r($query->posts);
-            if($background=get_post_meta($query->posts[0]->ID,"zy_background",true)){
-
-                  $background=json_decode($background,true);
-                  $background_src=$background["filepath"];
-            }
-        ?>
-        <div class="top_bg">
-            <img src="<?php echo $background_src ?>" />
-        </div>
         <h2 class="section_title news_title">news</h2>
         <p class="section_heading">Push forward the cultural, economic, technological and design exchanges between China and Italy.</p>
         <ul class="post_list">
@@ -176,6 +177,20 @@ $program_categories=get_categories(array("parent"=>$programs_id,"hide_empty"=>fa
             <?php
             }
             ?>
+
+            <li>
+                <a href="http://www.hnid.org/CIDIC/showtongdao">
+                    <div class="post_thumb">
+                        <img src="http://www.hnid.org/CIDIC/wp-content/uploads/2014/04/dongjin.jpg">
+                    </div>
+                    <div class="post_abstract">
+                        <h3 class="post_title">
+                            Rong Exhibition
+                        </h3>
+                        <p class="post_date"><?php echo ""; ?></p>
+                    </div>
+                </a>
+            </li>
         </ul>
         <a href="<?php echo get_category_link($programs_id);?>" class="btn_more">ALL PROGRAMS</a>
     </section>
