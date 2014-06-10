@@ -95,6 +95,7 @@ a{
     background:url(../../../images/frontend/app/contactBg.jpg) no-repeat;
     background-size: 100% 100%;
     color: #E9E8E5;
+    opacity:0.8;
     text-align:center;
 }
 .section_contact .contact_title{
